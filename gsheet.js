@@ -5,7 +5,7 @@ const fs = require('fs');
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
 const TOKEN_PATH = 'token.json';
 
-const spreadsheetId = '12RPFurxrfseNxVfm2y5j_uL4oUtMlb4GpzC5r5L2kZ4';
+const spreadsheetId = '1TIz_wkIoj9nlQ7ypkfPHDRtPO218ydDfNtKUJ_02Iz0';
 
 
 module.exports = {
