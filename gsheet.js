@@ -20,7 +20,7 @@ module.exports = {
  */
 module.exports.authorize = function authorize(credentials, callback) {
   const {client_secret, client_id, redirect_uris} = credentials.installed;
-  const oAuth2Client = new google.auth.OAuth2(
+  const oAuth2Client = new google.OAuth2(
       client_id, client_secret, redirect_uris[0]);
 
   // Check if we have previously stored a token.
@@ -34,7 +34,7 @@ module.exports.authorize = function authorize(credentials, callback) {
 /*
  * Get and store new token after prompting for user authorization, and then
  * execute the given callback with the authorized OAuth2 client.
- * @param {google.auth.OAuth2} oAuth2Client The OAuth2 client to get token for.
+ * @param {google.OAuth2} oAuth2Client The OAuth2 client to get token for.
  * @param {getEventsCallback} callback The callback for the authorized client.
  */
 function getNewToken(oAuth2Client, callback) {
@@ -64,7 +64,7 @@ function getNewToken(oAuth2Client, callback) {
 
 module.exports.authorizeScoreChange = function authorizeScoreChange(credentials, callback, val1, val2) {
   const {client_secret, client_id, redirect_uris} = credentials.installed;
-  const oAuth2Client = new google.auth.OAuth2(
+  const oAuth2Client = new google.OAuth2(
       client_id, client_secret, redirect_uris[0]);
 
   // Check if we have previously stored a token.
@@ -77,7 +77,7 @@ module.exports.authorizeScoreChange = function authorizeScoreChange(credentials,
 
 module.exports.authorizeMemberChange = function authorizeMemberChange(credentials, callback, val1) {
   const {client_secret, client_id, redirect_uris} = credentials.installed;
-  const oAuth2Client = new google.auth.OAuth2(
+  const oAuth2Client = new google.OAuth2(
       client_id, client_secret, redirect_uris[0]);
 
   // Check if we have previously stored a token.
