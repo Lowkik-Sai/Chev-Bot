@@ -1,5 +1,6 @@
 const readline = require('readline');
-const {google} = require('googleapis');
+const { google } = require('googleapis');
+const { auth } = require('google-auth-library');
 const fs = require('fs');
 
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
