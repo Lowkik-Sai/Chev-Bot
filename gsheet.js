@@ -25,7 +25,7 @@ module.exports.authorize = function authorize(credentials, callback) {
   // Check if we have previously stored a token.
   fs.readFile(TOKEN_PATH, (err, token) => {
     if (err) return getNewToken(oAuth2Client, callback);
-    oAuth2Client.setCredentials(JSON.parse(token));
+    oAuth2Client.setCredentials((token));
     callback(oAuth2Client);
   });
 }
@@ -69,7 +69,7 @@ module.exports.authorizeScoreChange = function authorizeScoreChange(credentials,
   // Check if we have previously stored a token.
   fs.readFile(TOKEN_PATH, (err, token) => {
     if (err) return getNewToken(oAuth2Client, callback);
-    oAuth2Client.setCredentials(JSON.parse(token));
+    oAuth2Client.setCredentials((token));
     callback(oAuth2Client, val1, val2);
   });
 }
@@ -82,7 +82,7 @@ module.exports.authorizeMemberChange = function authorizeMemberChange(credential
   // Check if we have previously stored a token.
   fs.readFile(TOKEN_PATH, (err, token) => {
     if (err) return getNewToken(oAuth2Client, callback);
-    oAuth2Client.setCredentials(JSON.parse(token));
+    oAuth2Client.setCredentials((token));
     callback(oAuth2Client, val1);
   });
 }
